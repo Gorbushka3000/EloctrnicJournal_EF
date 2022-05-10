@@ -1,41 +1,107 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.CompilerServices;
+using System.ComponentModel;
 
 namespace EloctrnicJournal_EF.Model
 {
-    public class Users
+    public class User : INotifyPropertyChanged
     {
-        [Required]
-        public string? Name { get; set; }
-        [Required]
-        public string? LastName { get; set; }
-        [Required]
-        public string? Email { get; set; }   
-        [Required]
-        public int PhoneNumber { get; set; }
-        [Required]
-        public DateTime BirtDay { get; set; }
+        public string? name;
+        public string? lastname;
+        public string? email;
+        public int phonenumber;
+        public string? Name
+        {
+            get { return name; }
+            set
+            {
+                name = value;
+                OnPropertyChanged("Name");
+            }
+        }
+        public string? LastName
+        {
+            get { return lastname; }
+            set 
+            {
+                lastname = value; OnPropertyChanged("LastName");
+            }
+        }
+        public string? Email
+        {
+            get { return email; }
+            set 
+            {
+                email = value;
+                OnPropertyChanged("Email");
+            }
+        }   
+        public int PhoneNumber
+        {
+            get { return phonenumber; }
+            set 
+            {
+                PhoneNumber = value; 
+                OnPropertyChanged("phonenumber");
+            }
+        }
+       // [Required]
+       // public DateTime BirtDay { get; set; }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        public void OnPropertyChanged([CallerMemberName] string prop = "")
+        {
+            if (PropertyChanged != null)
+                PropertyChanged(this, new PropertyChangedEventArgs(prop));
+        }
     }
 
-    public class Students : Users
+    public class Student : User
     {
+        public int studentsclass;
+        public int parentid;
+        public int teacherid;
         public int Id { get; set; }
-        public int Class { get; set; }
-        public Parents Parents { get; set; }
-        public int ParentsId { get; set; }
+        public int Class
+        {
+            get { return studentsclass; }
+            set 
+            {
+                studentsclass = value; 
+                OnPropertyChanged("studentclass");
+            }
+        }
+        public Parent Parent { get; set; }
+        public int ParentId
+        {
+            get { return parentid; }
+            set
+            {
+                parentid = value;
+                OnPropertyChanged("parentid");
+            }
+        }
+        public Teacher Teacher { get; set; }
+        public int TeacherId
+        {
+            get { return teacherid; }
+            set
+            { 
+                teacherid = value;
+                OnPropertyChanged("teacherid");
+            }
+        }
     }
-    public class Parents : Users
+    public class Parent : User
     {
         public int Id { get; set; }
-        public List<Students> Students { get; set; }
+        public List<Student> Student { get; set; }
     }
-    public class Teachers : Users
+    public class Teacher : User
     {
         public int Id { get; set; }
-        public List<Students> Students { get; set; }
+        public List<Student> Student { get; set; }
     }
 }

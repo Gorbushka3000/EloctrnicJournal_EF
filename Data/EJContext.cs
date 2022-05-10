@@ -8,13 +8,13 @@ namespace EloctrnicJournal_EF.Data
     public class EJContext : DbContext
     {
         public static EJContext context;
-        public DbSet<Students> Students => Set<Students>();
-        public DbSet<Parents> Parents => Set<Parents>();
-        public DbSet<Teachers> Teacher => Set<Teachers>();
+        public DbSet<Student> Student => Set<Student>();
+        public DbSet<Parent> Parent => Set<Parent>();
+        public DbSet<Teacher> Teacher => Set<Teacher>();
 
         public EJContext()
         {
-            Database.EnsureDeleted();
+          //Database.EnsureDeleted();
             Database.EnsureCreated();
         }
         public static EJContext GetContext()
@@ -26,13 +26,13 @@ namespace EloctrnicJournal_EF.Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlite("Data Source=ElectronicJournal.db"); ;
-            optionsBuilder.LogTo(Console.WriteLine, LogLevel.Information);
+            //optionsBuilder.LogTo(Console.WriteLine, LogLevel.Information);
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Parents>();
-            modelBuilder.Entity<Teachers>();
-            modelBuilder.Entity<Students>();
+            modelBuilder.Entity<Parent>();
+            modelBuilder.Entity<Teacher>();
+            modelBuilder.Entity<Student>();
         }
     }
 }
