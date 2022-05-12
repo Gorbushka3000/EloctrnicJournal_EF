@@ -66,3 +66,4 @@ namespace EloctrnicJournal_EF
         }
     }
 }
+
