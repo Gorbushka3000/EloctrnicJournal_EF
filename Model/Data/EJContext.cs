@@ -1,7 +1,5 @@
 ﻿using EloctrnicJournal_EF.Model;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
-using System;
 
 namespace EloctrnicJournal_EF.Data
 {
@@ -15,7 +13,6 @@ namespace EloctrnicJournal_EF.Data
 
         public EJContext()
         {
-            //Database.EnsureDeleted();
             Database.EnsureCreated();
         }
         public static EJContext GetContext()
@@ -27,7 +24,6 @@ namespace EloctrnicJournal_EF.Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(@"Server=(local);Database=ElectronicJournal;Trusted_Connection=True;");
-            //optionsBuilder.LogTo(Console.WriteLine, LogLevel.Information);
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
