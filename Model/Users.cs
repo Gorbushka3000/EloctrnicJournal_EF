@@ -44,7 +44,7 @@ namespace EloctrnicJournal_EF.Model
             get { return phonenumber; }
             set 
             {
-                PhoneNumber = value; 
+                phonenumber = value; 
                 OnPropertyChanged("phonenumber");
             }
         }
