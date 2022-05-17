@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Microsoft.EntityFrameworkCore;
 using EloctrnicJournal_EF.View;
+using System;
+using System.Windows;
 
 namespace EloctrnicJournal_EF.ViewModel
 {
@@ -14,6 +16,7 @@ namespace EloctrnicJournal_EF.ViewModel
         RelayCommand addCommand;
         RelayCommand editCommand;
         RelayCommand deleteCommand;
+        RelayCommand wow;
         IEnumerable<Student> students;
 
         public IEnumerable<Student> Students
@@ -64,10 +67,10 @@ namespace EloctrnicJournal_EF.ViewModel
                             Name = student.Name,
                             LastName = student.LastName,
                             Email = student.Email,
-                            PhoneNumber = student.PhoneNumber,
-                            Class = student.Class,
-                            ParentId = student.ParentId,
-                            TeacherId = student.TeacherId
+                            PhoneNumber = 5656,
+                            Class = 1,
+                            ParentId = 1,
+                            TeacherId = 1
                         };
                         StudentWindow studentWindow = new StudentWindow(vm);
 
@@ -98,6 +101,19 @@ namespace EloctrnicJournal_EF.ViewModel
                         Student student = selectedItem as Student;
                         db.Student.Remove(student);
                         db.SaveChanges();
+                    }));
+            }
+        }
+        public RelayCommand WoW
+        {
+            get
+            {
+                return wow ??
+                    (wow = new RelayCommand((selectedItem) =>
+                    {
+                        if (selectedItem == null) return;
+                        Student student = selectedItem as Student;
+                        MessageBox.Show($"Ученик Имя: {student.Name}");
                     }));
             }
         }

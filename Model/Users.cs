@@ -10,9 +10,11 @@ namespace EloctrnicJournal_EF.Model
     {
         public string? name;
         public string? lastname;
-
         public string? email;
         public int phonenumber;
+        public string? password;
+        public string? photo;
+
         public string? Name
         {
             get { return name; }
@@ -48,6 +50,7 @@ namespace EloctrnicJournal_EF.Model
                 OnPropertyChanged("phonenumber");
             }
         }
+
        // [Required]
        // public DateTime BirtDay { get; set; }
 

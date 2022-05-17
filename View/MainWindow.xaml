@@ -15,6 +15,7 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
+
                         <TextBlock Text="{Binding Name}" FontSize="16" />
                         <TextBlock Text="{Binding LastName}" FontSize="12" />
                         <TextBlock Text="{Binding Email}" FontSize="13" />
@@ -27,6 +28,8 @@
             <Button Content="Изменить" Margin="10" Command="{Binding EditCommand}"
                     CommandParameter="{Binding ElementName=studentList, Path=SelectedItem}"/>
             <Button Content="Удалить" Margin="10" Command="{Binding DeleteCommand}"
+                    CommandParameter="{Binding ElementName=studentList, Path=SelectedItem}"/>
+            <Button Content="Открыть" Margin="10" Command="{Binding WoW}"
                     CommandParameter="{Binding ElementName=studentList, Path=SelectedItem}"/>
         </StackPanel>
     </Grid>
