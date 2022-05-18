@@ -7,9 +7,8 @@ namespace EloctrnicJournal_EF.Data
     {
         public static EJContext context;
         public DbSet<Student> Student => Set<Student>();
-        public DbSet<Parent> Parent => Set<Parent>();
         public DbSet<Teacher> Teacher => Set<Teacher>();
-        public DbSet<Ratings> Rating => Set<Ratings>();
+        public DbSet<Grade> Grades => Set<Grade>();
         public DbSet<Passes> Passes => Set<Passes>();
         public EJContext()
         {
@@ -28,10 +27,9 @@ namespace EloctrnicJournal_EF.Data
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Parent>();
             modelBuilder.Entity<Teacher>();
             modelBuilder.Entity<Student>();
-            modelBuilder.Entity<Ratings>();
+            modelBuilder.Entity<Grade>();
         }
     }
 }

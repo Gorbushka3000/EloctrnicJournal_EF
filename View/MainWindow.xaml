@@ -15,7 +15,6 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
-
                         <TextBlock Text="{Binding Name}" FontSize="16" />
                         <TextBlock Text="{Binding LastName}" FontSize="12" />
                         <TextBlock Text="{Binding Email}" FontSize="13" />

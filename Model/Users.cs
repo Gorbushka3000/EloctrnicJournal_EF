@@ -77,16 +77,6 @@ namespace EloctrnicJournal_EF.Model
                 OnPropertyChanged("studentclass");
             }
         }
-        public Parent Parent { get; set; }
-        public int ParentId
-        {
-            get { return parentid; }
-            set
-            {
-                parentid = value;
-                OnPropertyChanged("parentid");
-            }
-        }
         public Teacher Teacher { get; set; }
         public int TeacherId
         {
@@ -97,11 +87,6 @@ namespace EloctrnicJournal_EF.Model
                 OnPropertyChanged("teacherid");
             }
         }
-    }
-    public class Parent : User
-    {
-        public int Id { get; set; }
-        public List<Student> Student { get; set; }
     }
     public class Teacher : User
     {

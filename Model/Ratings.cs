@@ -1,33 +1,16 @@
-﻿
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.ComponentModel;
-using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EloctrnicJournal_EF.Model
 {
-    public class Ratings : INotifyPropertyChanged
+    public class Rating : INotifyPropertyChanged
     {
-        public int rating;
         public DateTime date;
         public int lessonId;
         public int teacherId;
-        public string? comment;
         public int studentId;
 
-        public int Id { get; set; }
-        public int Rating
-        {
-            get { return rating; }
-            set 
-            {
-                rating = value;
-                OnPropertyChanged("Rating");
-            }
-        }
         public DateTime DateRating
         {
             get { return date; }
@@ -56,16 +39,6 @@ namespace EloctrnicJournal_EF.Model
             }
         }
 
-        public string Comment
-        {
-            get { return comment; }
-            set
-            {
-                comment = value;
-                OnPropertyChanged("Comment");
-            }
-        }
-
         public int StudentId
         {
             get { return studentId; }
@@ -84,57 +57,51 @@ namespace EloctrnicJournal_EF.Model
         }
     }
 
-    public class Passes : INotifyPropertyChanged
+    public class Passes : Rating
     {
-        public char pass;
-        public int lessonId;
-        public int teacherId;
-        public DateTime date;
-        public int studentId;
-
         public int Id { get; set; }
+        public char pass;
         public char Pass
         {
             get { return pass; }
-            set { 
-                pass = value;
+            set 
+            { 
+                pass = value; 
                 OnPropertyChanged("Pass");
             }
         }
-        public int LessonId
-        {
-            get { return lessonId; }
-            set
-            {
-                lessonId = value;
-                OnPropertyChanged("LessonId");
-            }
-        }
-        public int StudenId
-        {
-            get { return studentId; }
-            set
-            {
-                studentId = value;
-                OnPropertyChanged("StudentId");
-            }
+    }
 
-        }
-        public DateTime DatePass
+    public class Grade : Rating
+    {
+        public int Id { get; set; }
+        public int grades;
+        public string? comment;
+        public int Grades
         {
-            get { return date; }
-            set
+            get { return grades; }
+            set 
             {
-                date = value;
-                OnPropertyChanged("DatePass");
+                grades = value; 
+                OnPropertyChanged("Grades");
             }
         }
-        public event PropertyChangedEventHandler? PropertyChanged;
-        public void OnPropertyChanged([CallerMemberName] string prop = "")
+        public string? Comment
         {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(prop));
+            get { return comment; }
+            set
+            {
+                comment = value;
+                OnPropertyChanged("Comment");
+            }
         }
+    }
+
+    public class HomeWork : Rating
+    {
+        public int Id { get; set; }
+        public string task;
+        
     }
 }
 
