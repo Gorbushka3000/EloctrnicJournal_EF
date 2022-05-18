@@ -4,7 +4,7 @@
 
 namespace EloctrnicJournal_EF.Migrations
 {
-    public partial class FirstMigration_01 : Migration
+    public partial class Passes : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

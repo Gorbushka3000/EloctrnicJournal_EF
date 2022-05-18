@@ -41,7 +41,7 @@ namespace EloctrnicJournal_EF.ViewModel
                 return addCommand ??
                     (addCommand = new RelayCommand((o) =>
                     {
-                        StudentWindow studentWindow = new StudentWindow(new Student());
+                        StudentChangeWindow studentWindow = new StudentChangeWindow(new Student());
                         if (studentWindow.ShowDialog() == true)
                         {
                             Student student = studentWindow.Student;
@@ -72,7 +72,7 @@ namespace EloctrnicJournal_EF.ViewModel
                             ParentId = 1,
                             TeacherId = 1
                         };
-                        StudentWindow studentWindow = new StudentWindow(vm);
+                        StudentChangeWindow studentWindow = new StudentChangeWindow(vm);
 
                         if (studentWindow.ShowDialog() == true)
                         {

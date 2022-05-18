@@ -9,10 +9,11 @@ namespace EloctrnicJournal_EF.Data
         public DbSet<Student> Student => Set<Student>();
         public DbSet<Parent> Parent => Set<Parent>();
         public DbSet<Teacher> Teacher => Set<Teacher>();
-
-
+        public DbSet<Ratings> Rating => Set<Ratings>();
+        public DbSet<Passes> Passes => Set<Passes>();
         public EJContext()
         {
+            Database.EnsureDeleted();
             Database.EnsureCreated();
         }
         public static EJContext GetContext()
@@ -30,6 +31,7 @@ namespace EloctrnicJournal_EF.Data
             modelBuilder.Entity<Parent>();
             modelBuilder.Entity<Teacher>();
             modelBuilder.Entity<Student>();
+            modelBuilder.Entity<Ratings>();
         }
     }
 }

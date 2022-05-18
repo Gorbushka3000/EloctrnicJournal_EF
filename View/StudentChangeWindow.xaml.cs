@@ -3,10 +3,10 @@ using EloctrnicJournal_EF.Model;
 
 namespace EloctrnicJournal_EF.View
 {
-    public partial class StudentWindow : Window
+    public partial class StudentChangeWindow : Window
     {
         public Student Student { get; private set; }
-        public StudentWindow(Student s)
+        public StudentChangeWindow(Student s)
         {
             InitializeComponent();
             Student = s;
