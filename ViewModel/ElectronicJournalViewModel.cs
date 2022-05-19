@@ -68,7 +68,6 @@ namespace EloctrnicJournal_EF.ViewModel
                             LastName = student.LastName,
                             Email = student.Email,
                             PhoneNumber = 5656,
-                            Class = 1,
                             TeacherId = 1
                         };
                         StudentChangeWindow studentWindow = new StudentChangeWindow(vm);

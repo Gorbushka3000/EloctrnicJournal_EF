@@ -10,6 +10,8 @@ namespace EloctrnicJournal_EF.Data
         public DbSet<Teacher> Teacher => Set<Teacher>();
         public DbSet<Grade> Grades => Set<Grade>();
         public DbSet<Passes> Passes => Set<Passes>();
+        public DbSet<Lesson> Lessons => Set<Lesson>();
+        public DbSet<ClassNumber> ClassNumbers => Set<ClassNumber>();
         public EJContext()
         {
             Database.EnsureDeleted();

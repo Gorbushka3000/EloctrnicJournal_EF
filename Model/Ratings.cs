@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
@@ -9,8 +10,6 @@ namespace EloctrnicJournal_EF.Model
         public DateTime date;
         public int lessonId;
         public int teacherId;
-        public int studentId;
-
         public DateTime DateRating
         {
             get { return date; }
@@ -20,6 +19,7 @@ namespace EloctrnicJournal_EF.Model
                 OnPropertyChanged("DateRating");
             }
         }
+        public Lesson Lesson { get; set; }
         public int LessonId
         {
             get { return lessonId; }
@@ -29,6 +29,7 @@ namespace EloctrnicJournal_EF.Model
                 OnPropertyChanged("LessonId");
             }
         }
+        public Teacher Teacher { get; set; }
         public int TeacherId
         {
             get { return teacherId; }
@@ -36,16 +37,6 @@ namespace EloctrnicJournal_EF.Model
             {
                 teacherId = value;
                 OnPropertyChanged("TeacherId");
-            }
-        }
-
-        public int StudentId
-        {
-            get { return studentId; }
-            set
-            {
-                studentId = value;
-                OnPropertyChanged("StudentId");
             }
         }
 
@@ -61,6 +52,17 @@ namespace EloctrnicJournal_EF.Model
     {
         public int Id { get; set; }
         public char pass;
+        public int studentId;
+        public Student Student { get; set; }
+        public int StudentId
+        {
+            get { return studentId; }
+            set
+            {
+                studentId = value;
+                OnPropertyChanged("StudentId");
+            }
+        }
         public char Pass
         {
             get { return pass; }
@@ -77,6 +79,18 @@ namespace EloctrnicJournal_EF.Model
         public int Id { get; set; }
         public int grades;
         public string? comment;
+        public int studentId;
+        public List<Student> Students { get; set; }
+        public int StudentId
+        {
+            get { return studentId; }
+            set
+            {
+                studentId = value;
+                OnPropertyChanged("StudentId");
+            }
+        }
+
         public int Grades
         {
             get { return grades; }

@@ -12,9 +12,7 @@ namespace EloctrnicJournal_EF.Model
         public string? lastname;
         public string? email;
         public int phonenumber;
-        public string? password;
-        public string? photo;
-
+        public string? Password { get; set; }
         public string? Name
         {
             get { return name; }
@@ -47,7 +45,7 @@ namespace EloctrnicJournal_EF.Model
             set 
             {
                 phonenumber = value; 
-                OnPropertyChanged("phonenumber");
+                OnPropertyChanged("PhoneNumber");
             }
         }
 
@@ -65,16 +63,17 @@ namespace EloctrnicJournal_EF.Model
     public class Student : User
     {
         public int studentsclass;
-        public int parentid;
         public int teacherid;
+        public int classNumberId;
         public int Id { get; set; }
-        public int Class
+        public ClassNumber ClassNumber { get; set; }
+        public int ClassNumberId
         {
-            get { return studentsclass; }
-            set 
+            get { return classNumberId; }
+            set
             {
-                studentsclass = value; 
-                OnPropertyChanged("studentclass");
+                classNumberId = value;
+                OnPropertyChanged("ClassNumberId");
             }
         }
         public Teacher Teacher { get; set; }
@@ -84,13 +83,17 @@ namespace EloctrnicJournal_EF.Model
             set
             { 
                 teacherid = value;
-                OnPropertyChanged("teacherid");
+                OnPropertyChanged("TeacherId");
             }
         }
+        public List<Grade> Grades { get; set; }
+        public List<Passes> Passes { get; set; }
     }
     public class Teacher : User
     {
         public int Id { get; set; }
         public List<Student> Student { get; set; }
+        public List<Grade> Grades { get; set; }
+        public List<Passes> Pass { get; set; }
     }
 }

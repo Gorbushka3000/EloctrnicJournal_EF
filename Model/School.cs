@@ -34,16 +34,17 @@ namespace EloctrnicJournal_EF.Model
     public class ClassNumber : School
     {
         public int Id { get; set; }
-        public int classNumbers;
-        public int ClassNumbers
+        public int classNumber;
+        public int ClassNum
         {
-            get { return classNumbers; }
+            get { return classNumber; }
             set 
             {
-                classNumbers = value;
-                OnPropertyChanged("ClassNumbers");
+                classNumber = value;
+                OnPropertyChanged("ClassNum");
             }
         }
+        public List<Student> Students { get; set; }
     }
 
 }
