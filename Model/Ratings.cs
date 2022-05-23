@@ -93,6 +93,7 @@ namespace EloctrnicJournal_EF.Model
 
         public int Grades
         {
+
             get { return grades; }
             set 
             {

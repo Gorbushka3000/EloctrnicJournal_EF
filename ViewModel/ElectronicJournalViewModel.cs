@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Microsoft.EntityFrameworkCore;
 using EloctrnicJournal_EF.View;
-using System;
 using System.Windows;
 
 namespace EloctrnicJournal_EF.ViewModel

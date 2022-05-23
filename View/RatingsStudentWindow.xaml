@@ -12,14 +12,14 @@
             <RowDefinition Height="4*"/>
             <RowDefinition Height="0.5*"/>
         </Grid.RowDefinitions>
-        <ListBox Grid.Row="1" x:Name="studentList" ItemsSource="{Binding Ratings}">
+        <ListBox Grid.Row="1" x:Name="studentList" ItemsSource="{Binding Grade}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
-                        <TextBlock Text="{Binding LessonName}" FontSize="16" />
+                        <TextBlock Text="{Binding LessonId.LessonName}" FontSize="16" />
                         <ListBox>
                             <StackPanel Orientation="Vertical">
-                                <TextBlock Text="{Binding Ratings}" FontSize="14"/>
+                                <TextBlock Text="{Binding Grades}" FontSize="14"/>
                             </StackPanel>
                         </ListBox>
                     </StackPanel>

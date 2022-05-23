@@ -8,7 +8,7 @@ namespace EloctrnicJournal_EF
         public MainWindow()
         {
             InitializeComponent();
-            this.DataContext = new ElectronicJournalViewModel();
+            DataContext = new ElectronicJournalViewModel();
         }
     }
 }
